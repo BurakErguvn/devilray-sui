@@ -1,0 +1,28 @@
+name: DEX integration
+description: Propose integrating another Sui DEX or liquidity source
+labels: ["dex-integration"]
+body:
+  - type: input
+    id: dex
+    attributes:
+      label: DEX / venue name
+    validations:
+      required: true
+  - type: textarea
+    id: surface
+    attributes:
+      label: On-chain surface
+      description: Pool object types, package IDs, swap entrypoints, shared objects, docs/SDK links.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Expected work
+      options:
+        - label: Collector (`DexDataCollector`)
+        - label: Tick fetch
+        - label: Quote simulation
+        - label: PTB / MoveCall layout
+        - label: Fixtures / tests
+        - label: Dry-run / parity (future)

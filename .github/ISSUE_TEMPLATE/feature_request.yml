@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose a feature or roadmap item
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or operator problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Desired behavior, acceptance criteria, and any roadmap ID (#N) if known.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Routing / simulation
+        - Discovery / collectors
+        - Transaction building
+        - API / WebSocket
+        - Storage / workers
+        - Docs / DX
+        - Other
+    validations:
+      required: true

@@ -1,0 +1,32 @@
+name: Bug report
+description: Report a bug in DevilRay
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug. Please do **not** include private keys, mnemonic phrases, or live credentials.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands, env vars (redacted), and expected vs actual behavior.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: 0.1.0 or git SHA
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / metrics
+      description: Relevant `RUST_LOG` output (redacted).

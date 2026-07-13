@@ -1,0 +1,43 @@
+[package]
+name = "devilray-sui"
+version = "0.1.0"
+edition = "2024"
+description = "Experimental Sui CLMM DEX aggregator backend: multi-DEX quotes, tick-aware routing, and unsigned PTB generation"
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/BurakErguvn/devilray-sui"
+homepage = "https://github.com/BurakErguvn/devilray-sui"
+documentation = "https://github.com/BurakErguvn/devilray-sui#readme"
+keywords = ["sui", "dex", "aggregator", "clmm", "defi"]
+categories = ["cryptography::cryptocurrencies", "network-programming", "asynchronous"]
+authors = ["Burak Ergüven"]
+
+[features]
+integration = []
+
+[dependencies]
+anyhow = "1.0.102"
+async-trait = "0.1.89"
+axum = { version = "0.8.9", features = ["ws"] }
+base64 = "0.22"
+bcs = "0.1.6"
+clickhouse = { version = "0.15.1", features = ["lz4"] }
+futures-util = "0.3.32"
+prometheus = "0.13"
+redis = { version = "1.2.4", features = ["tokio-comp"] }
+reqwest = { version = "0.13.4", features = ["json"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.150"
+sqlx = { version = "0.9.0", features = ["runtime-tokio", "postgres", "macros"] }
+sui-crypto = { version = "0.3.0", features = ["ed25519"] }
+sui-sdk-types = { version = "0.3.1", features = ["serde", "hash"] }
+sui-transaction-builder = { version = "0.3.1", default-features = false }
+thiserror = "2.0"
+tokio = { version = "1.52.3", features = ["full"] }
+tokio-tungstenite = { version = "0.29.0", features = ["rustls-tls-webpki-roots"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[dev-dependencies]
+rand = "0.8"
+sui-crypto = { version = "0.3.0", features = ["ed25519"] }
